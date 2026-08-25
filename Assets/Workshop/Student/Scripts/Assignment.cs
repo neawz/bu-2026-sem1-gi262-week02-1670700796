@@ -122,9 +122,7 @@ namespace Assignment
                         new Vector2(x, y),
                         Quaternion.identity
                         );
-                    Console.Write(selectedTile);
                 }
-                Console.WriteLine("");
             }
         }
 

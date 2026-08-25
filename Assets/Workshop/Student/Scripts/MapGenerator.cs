@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Workshop.Student
@@ -19,16 +19,25 @@ namespace Workshop.Student
         };
 
         // 1. declare Players variable
-        GameObject player;
+        public GameObject[] Players;
 
         // 7. declare Exit variable 
-
+        public GameObject Exit;
 
         public void Start()
         {
             // 1. random player at the position <0, 0> map
+            Instantiate(Players[UnityEngine.Random.Range(0, Players.Length)], new Vector2(0, 0), Quaternion.identity);
 
             // 2. create obstacles
+            for (int y = 0; y < rows / 2; y++)
+            {
+                GameObject obstacle = Instantiate(
+                    wallTiles[1],
+                    new Vector3(columns / 2, y, -0.1f),
+                    Quaternion.identity
+                );
+            }
 
             // 3. create floor
             for (int x = 0; x < columns; x++)
@@ -82,27 +91,27 @@ namespace Workshop.Student
             {
                 for (int x = 0; x < saveItemMap.GetLength(1); x++)
                 {
-                    string item = saveItemMap[y, x];
-                    int foodIndex = -1;
-                    for (int i = 0; i < foodTiles.Length; i++)
+                    string item = saveItemMap[x, y];
+                    if (!string.IsNullOrEmpty(item))
                     {
-                        if (foodTiles[i].name == item)
+                        foreach (GameObject foodTile in foodTiles)
                         {
-                            foodIndex = i;
+                            if (foodTile.name == item)
+                            {
+                                GameObject food = Instantiate(
+                                    foodTile,
+                                    new Vector2(x, y),
+                                    Quaternion.identity
+                                    );
+                                food.name = $"{item} {x}, {y}";
+                            }
                         }
-                    }
-
-                    if (foodIndex > -1)
-                    {
-                        Instantiate(foodTiles[foodIndex],
-                            new Vector2(x, y),
-                            Quaternion.identity);
                     }
                 }
             }
 
             // 7. place exit
-
+            Instantiate(Exit, new Vector2(columns - 1, rows - 1), Quaternion.identity);
         }
     }
 

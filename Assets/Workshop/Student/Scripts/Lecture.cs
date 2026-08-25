@@ -10,11 +10,11 @@ namespace Assignment
 
         void Start()
         {
-            LCT01_SyntaxArray();
-            LCT02_ArrayInitialize();
+            // LCT01_SyntaxArray();
+            // LCT02_ArrayInitialize();
             // LCT03_SyntaxLoop();
             // LCT04_LoopAndArray();
-            // LCT05_Syntax2DArray();
+            LCT05_Syntax2DArray();
             // LCT06_SizeOf2DArray();
             // LCT07_SyntaxNestedLoop();
         }
