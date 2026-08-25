@@ -12,7 +12,7 @@ namespace Assignment
         {
             // AS01_RandomItemDrop(); Checked
             // AS02_NestedLoopForCreate2DMap(); Checked
-            AS03_NestedLoopForMakingWallAround();
+            // AS03_NestedLoopForMakingWallAround();
             // AS04_AttackEnemy();
             // AS05_DynamicIterationLoop();
             // AS06_WhileLoopAndArray();
@@ -24,7 +24,7 @@ namespace Assignment
             // StartCoroutine(AS12_CountTime());
             // AS13_SumOfNumbersInRow();
             // AS14_SumOfNumbersInColumn();
-            // AS15_MakeTheTriangle();
+            AS15_MakeTheTriangle();
             // AS16_MultiplicationTableOf_2_3_and_4();
             // EX_01_TicTacToeGame_TurnPlay();
 
@@ -122,6 +122,7 @@ namespace Assignment
                         new Vector2(x, y),
                         Quaternion.identity
                         );
+
                 }
             }
         }
@@ -265,7 +266,7 @@ namespace Assignment
         public int as04_target;
         public void AS04_AttackEnemy()
         {
-            throw new NotImplementedException();
+
         }
 
         /*
@@ -658,7 +659,16 @@ namespace Assignment
         public int as15_size;
         public void AS15_MakeTheTriangle()
         {
-            throw new NotImplementedException();
+            string text = "*";
+            for (int i = 0; i < as15_size; i++)
+            {
+                string line = "";
+                for (int j = 0; j <= i; j++)
+                {
+                    line += text;
+                }
+                Debug.Log(line);
+            }
         }
 
         /*
