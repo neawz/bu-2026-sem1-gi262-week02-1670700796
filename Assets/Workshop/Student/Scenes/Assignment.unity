@@ -206,7 +206,7 @@ MonoBehaviour:
     rows: 3
     cols: 3
     data: 010000000200000003000000040000000500000006000000070000000800000009000000
-  as13_row: 0
+  as13_row: 1
   as14_matrix:
     rows: 3
     cols: 3
